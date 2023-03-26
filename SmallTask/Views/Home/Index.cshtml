@@ -1,0 +1,19 @@
+﻿@model SmallTask.Models.HelloModel
+@{
+    ViewData["Title"] = "Hello";
+}
+
+<h2>Hello</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label for="name">Enter your name:</label>
+        <input type="text" class="form-control" id="name" name="Name" required asp-for="Name" />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+@if (!string.IsNullOrEmpty(Model.Name))
+{
+    <p>Hello, @Model.Name!</p>
+}
